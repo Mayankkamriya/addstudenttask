@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { db } from "../../firebase/config";
-import { collection, getDocs } from "firebase/firestore";
-import AddStudentModal from "../modal/AddStudentModal"; 
 import { FaEye, FaEdit, FaTrashAlt } from "react-icons/fa";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase/config";
+import AddStudentModal from "./AddStudentModal"; 
 import "./styles/studentTable.css";
 
 const StudentsTable = () => {
@@ -33,7 +33,7 @@ const StudentsTable = () => {
   return (
     <div className="students-table-container">
       <h2>Student List</h2>
-      <button onClick={handleAddStudent}>Add Student</button>
+      <button type="button" onClick={handleAddStudent}>Add Student</button>
       <table className="students-table">
         <thead>
           <tr>

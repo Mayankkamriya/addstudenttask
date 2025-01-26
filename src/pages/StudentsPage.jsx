@@ -14,7 +14,14 @@ const StudentsPage = () => {
       </div>
       {isModalOpen && (
         <>
-          <div className="modal-overlay" onClick={closeModal}></div>
+          <div className="modal-overlay" onClick={closeModal}  
+          role="button" 
+          tabIndex={0}
+  onKeyDown={(e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      closeModal();
+    }
+  }} />
           <AddStudentModal onClose={closeModal} />
         </>
       )}

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { db } from "../../firebase/config"; 
+import PropTypes from "prop-types";
 import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../firebase/config"; 
 import "./styles/addStudent.css"; 
 
 const AddStudentModal = ({ onClose }) => {
@@ -50,7 +51,7 @@ const AddStudentModal = ({ onClose }) => {
         <h2>Add Student</h2>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="name">Name:</label>
+            <label htmlFor="name">Name:
             <input
               type="text"
               id="name"
@@ -59,11 +60,11 @@ const AddStudentModal = ({ onClose }) => {
               value={formData.name}
               onChange={handleChange}
               required
-            />
+            /></label>
           </div>
 
           <div className="form-group">
-            <label htmlFor="class">Class:</label>
+            <label htmlFor="class">Class:
             <input
               type="text"
               id="class"
@@ -72,11 +73,11 @@ const AddStudentModal = ({ onClose }) => {
               value={formData.class}
               onChange={handleChange}
               required
-            />
+            /></label>
           </div>
 
           <div className="form-group">
-            <label htmlFor="section">Section:</label>
+            <label htmlFor="section">Section:
             <input
               type="text"
               id="section"
@@ -85,11 +86,11 @@ const AddStudentModal = ({ onClose }) => {
               value={formData.section}
               onChange={handleChange}
               required
-            />
+            /></label>
           </div>
 
           <div className="form-group">
-            <label htmlFor="rollNumber">Roll Number:</label>
+            <label htmlFor="rollNumber">Roll Number:
             <input
               type="text"
               id="rollNumber"
@@ -98,11 +99,11 @@ const AddStudentModal = ({ onClose }) => {
               value={formData.rollNumber}
               onChange={handleChange}
               required
-            />
+            /></label>
           </div>
 
           <div className="form-group">
-            <label htmlFor="email">Email:</label>
+            <label htmlFor="email">Email:
             <input
               type="email"
               id="email"
@@ -111,11 +112,11 @@ const AddStudentModal = ({ onClose }) => {
               value={formData.email}
               onChange={handleChange}
               required
-            />
+            /></label>
           </div>
 
           <div className="form-group">
-            <label htmlFor="phone">Phone:</label>
+            <label htmlFor="phone">Phone:
             <input
               type="tel"
               id="phone"
@@ -124,11 +125,11 @@ const AddStudentModal = ({ onClose }) => {
               value={formData.phone}
               onChange={handleChange}
               required
-            />
+            /></label>
           </div>
 
           <div className="form-group">
-            <label htmlFor="address">Address:</label>
+            <label htmlFor="address">Address:
             <textarea
               id="address"
               name="address"
@@ -136,11 +137,11 @@ const AddStudentModal = ({ onClose }) => {
               value={formData.address}
               onChange={handleChange}
               required
-            />
+            /></label>
           </div>
 
           <div className="form-group">
-            <label htmlFor="dob">Date of Birth:</label>
+            <label htmlFor="dob">Date of Birth:
             <input
               type="date"
               id="dob"
@@ -148,11 +149,11 @@ const AddStudentModal = ({ onClose }) => {
               value={formData.dob}
               onChange={handleChange}
               required
-            />
+            /></label>
           </div>
 
           <div className="form-group">
-            <label htmlFor="guardianName">Guardian's Name:</label>
+            <label htmlFor="guardianName">Guardian&#39;s Name:
             <input
               type="text"
               id="guardianName"
@@ -161,11 +162,11 @@ const AddStudentModal = ({ onClose }) => {
               value={formData.guardianName}
               onChange={handleChange}
               required
-            />
+            /></label>
           </div>
 
           <div className="form-group">
-            <label htmlFor="guardianPhone">Guardian's Phone:</label>
+            <label htmlFor="guardianPhone">Guardian&#39;s Phone:
             <input
               type="tel"
               id="guardianPhone"
@@ -174,11 +175,11 @@ const AddStudentModal = ({ onClose }) => {
               value={formData.guardianPhone}
               onChange={handleChange}
               required
-            />
+            /></label>
           </div>
 
           <div className="form-group">
-            <label htmlFor="admissionDate">Admission Date:</label>
+            <label htmlFor="admissionDate">Admission Date:
             <input
               type="date"
               id="admissionDate"
@@ -186,11 +187,11 @@ const AddStudentModal = ({ onClose }) => {
               value={formData.admissionDate}
               onChange={handleChange}
               required
-            />
+            /></label>
           </div>
 
           <div className="form-group">
-            <label htmlFor="gender">Gender:</label>
+            <label htmlFor="gender">Gender:
             <select
               id="gender"
               name="gender"
@@ -204,13 +205,13 @@ const AddStudentModal = ({ onClose }) => {
               <option value="Male">Male</option>
               <option value="Female">Female</option>
               <option value="Other">Other</option>
-            </select>
+            </select></label>
           </div>
 
           <button type="submit" disabled={loading}>
             {loading ? "Submitting..." : "Submit"}
           </button>
-          <button onClick={onClose} disabled={loading}>
+          <button type="button" onClick={onClose} disabled={loading}>
           Close
         </button>
         </form>
@@ -219,4 +220,7 @@ const AddStudentModal = ({ onClose }) => {
   );
 };
 
+AddStudentModal.propTypes = {
+  onClose: PropTypes.func.isRequired, // Validate that 'onClose' is a required function
+};
 export default AddStudentModal;

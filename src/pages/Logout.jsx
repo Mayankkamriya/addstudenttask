@@ -23,10 +23,10 @@ const Logout = () => {
         <h1 className="logout-title">Logout</h1>
         <p className="logout-text">Are you sure you want to log out?</p>
         <div className="button-group">
-          <button onClick={handleLogout} className="logout-button">
+          <button type="button" onClick={handleLogout} className="logout-button">
             Logout
           </button>
-          <button onClick={() => navigate(-1)} className="cancel-button">
+          <button type="button" onClick={() => navigate(-1)} className="cancel-button">
             Cancel
           </button>
         </div>
