@@ -1,0 +1,69 @@
+
+/* General container for the table */
+.students-table-container {
+  margin: 2rem auto;
+  padding: 1.5rem;
+  max-width: 1200px;
+  background-color: #ffffff;
+}
+
+/* Header for the table */
+.students-table-container h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #2d3748; /* Dark gray */
+}
+
+/* Add Student button */
+.students-table-container button {
+  background-color: #4f46e5; /* Indigo */
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-bottom: 1rem;
+}
+
+.students-table-container button:hover {
+  background-color: #3730a3; /* Darker indigo */
+}
+
+/* Table styling */
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.students-table th,
+.students-table td {
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e2e8f0; /* Light gray border */
+}
+
+.students-table th {
+  background-color: #f9fafb; /* Slightly lighter header background */
+  font-weight: bold;
+  color: #2d3748; /* Dark gray */
+}
+
+.students-table tr:hover {
+  background-color: #edf2f7; /* Light blue hover effect */
+}
+
+/* Action icons */
+.students-table td svg {
+  color: #4a5568; /* Gray */
+  cursor: pointer;
+  margin: 0 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.students-table td svg:hover {
+  color: #4f46e5; /* Indigo on hover */
+}

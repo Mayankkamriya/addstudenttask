@@ -1,0 +1,117 @@
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0; /* Adjusted from 10 to 0 for correct positioning */
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+/* Modal Content Box */
+.modal-content {
+  background-color: #fff;
+  padding: 2rem;
+  width: 80%;
+  max-width: 500px;
+  overflow-y: auto;
+  max-height: 80vh; 
+}
+
+/* Heading Styles */
+.modal-content h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #333;
+}
+
+/* Form Group Styles */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+  color: #333;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.form-group input[type="date"] {
+  padding-left: 10px; /* For better alignment of date picker */
+}
+
+.form-group select {
+  padding-right: 20px; /* To make space for the dropdown arrow */
+}
+
+/* Button Container for Side-by-Side Layout */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Space between the buttons */
+  margin-top: 1rem;
+}
+
+/* Submit Button Styles */
+button[type="submit"] {
+  background-color: #4f46e5; /* Indigo */
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 48%; /* Set width to 48% for side-by-side display */
+}
+
+button[type="submit"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+button[type="submit"]:hover:enabled {
+  background-color: #3730a3; /* Darker indigo */
+}
+
+/* Cancel Button Styles */
+button.cancel-button {
+  background-color: #e2e8f0; /* Light Gray */
+  color: #333;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  width: 48%; 
+}
+
+button.cancel-button:hover {
+  background-color: #cbd5e0; 
+}
+
+/* Textarea */
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}

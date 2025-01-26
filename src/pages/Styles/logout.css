@@ -1,0 +1,83 @@
+/* Logout.css */
+
+/* General body styling */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f3f4f6; /* Light gray background */
+}
+
+/* Centered container styling */
+.logout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f3f4f6;
+}
+
+/* Card styling */
+.logout-card {
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 20rem;
+  text-align: center;
+}
+
+/* Headline text */
+.logout-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+/* Description text */
+.logout-text {
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+}
+
+/* Button styling */
+.logout-button {
+  background-color: #ef4444; /* Red button */
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logout-button:hover {
+  background-color: #dc2626; /* Darker red on hover */
+}
+
+/* Cancel button */
+.cancel-button {
+  background-color: #e2e8f0; /* Light gray */
+  color: #2d3748; /* Dark gray */
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cancel-button:hover {
+  background-color: #cbd5e0; /* Darker gray on hover */
+}
+
+/* Spacing between buttons */
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
