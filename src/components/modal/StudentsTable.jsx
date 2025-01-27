@@ -33,6 +33,15 @@ const StudentsTable = () => {
 
   const handleCloseModal = () => {
     setShowModal(false);
+    const fetchStudents = async () => {
+      const querySnapshot = await getDocs(collection(db, "students"));
+      const studentList = querySnapshot.docs.map((studentDoc) => ({
+        id: studentDoc.id,
+        ...studentDoc.data(),
+      }));
+      setStudents(studentList);
+    };
+    fetchStudents()
   };
 
   const handleViewStudent = (student) => {
