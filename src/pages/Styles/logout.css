@@ -43,8 +43,8 @@ body {
 
 /* Button styling */
 .logout-button {
-  background-color: #ef4444; /* Red button */
-  color: white;
+  background-color: #e2e8f0; /* Red button */
+  color: #2d3748;
   font-weight: bold;
   padding: 0.5rem 1rem;
   border-radius: 0.75rem;
@@ -55,7 +55,7 @@ body {
 }
 
 .logout-button:hover {
-  background-color: #dc2626; /* Darker red on hover */
+  background-color: #ec4444; /* Darker red on hover  #dc2626*/
 }
 
 /* Cancel button */
