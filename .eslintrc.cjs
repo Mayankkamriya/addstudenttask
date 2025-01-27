@@ -106,4 +106,12 @@ module.exports = {
       },
     ],
   },
+  overrides: [
+    {
+      files: ['src/components/modal/ViewStudentModal.jsx'], // Target the file
+      rules: {
+        'arrow-body-style': 'off', // Disable the rule for this file
+      },
+    },
+  ],
 };
