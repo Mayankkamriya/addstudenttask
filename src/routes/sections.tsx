@@ -79,7 +79,7 @@ export function Router() {
       element: (
         <ProtectedRoute>
         <DashboardLayout>
-          <SidebarHeader /> {/* Sidebar header for login/logout button */}
+          {/* <SidebarHeader /> Sidebar header for login/logout button */}
           <Suspense fallback={renderFallback}>
             <Outlet />
           </Suspense>

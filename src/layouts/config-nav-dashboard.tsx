@@ -48,11 +48,11 @@ export const navData = [
   //   path: '/students-page',
   //   icon: icon('ic-user'),
   // },
-  {
-    title: 'Login',
-    path: '/login',
-    icon: icon('ic-user'),
-  },
+  // {
+  //   title: 'Login',
+  //   path: '/login',
+  //   icon: icon('ic-user'),
+  // },
   {
     title: 'Not found',
     path: '/404',
