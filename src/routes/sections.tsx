@@ -7,13 +7,13 @@ import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgr
 import { varAlpha } from 'src/theme/styles';
 import { AuthLayout } from 'src/layouts/auth';
 import { DashboardLayout } from 'src/layouts/dashboard';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { auth } from 'src/firebase/config'; 
+import { useAuthState } from 'react-firebase-hooks/auth'; // Import for auth state
+import { auth } from 'src/firebase/config'; // Import your firebase auth configuration
 import { Button } from '@mui/material';
 
 // ----------------------------------------------------------------------
 
-// Page imports
+// Lazy loading pages
 export const HomePage = lazy(() => import('src/pages/home'));
 export const BlogPage = lazy(() => import('src/pages/blog'));
 export const UserPage = lazy(() => import('src/pages/user'));
@@ -26,6 +26,7 @@ export const Logout = lazy(() => import('src/pages/Logout'));
 
 // ----------------------------------------------------------------------
 
+// Fallback for loading
 const renderFallback = (
   <Box display="flex" alignItems="center" justifyContent="center" flex="1 1 auto">
     <LinearProgress
@@ -39,22 +40,18 @@ const renderFallback = (
   </Box>
 );
 
-// ----------------------------------------------------------------------
-
-// Protected route component
+// ProtectedRoute for StudentsPage
 const ProtectedRoute = ({ children }: { children: ReactNode }) => {
-  const [user, loading] = useAuthState(auth);
-
+  const [user, loading] = useAuthState(auth); // Check auth state
   if (loading) {
-    return renderFallback;
+    return renderFallback; // Show loading if auth state is being checked
   }
-
-  return user ? children : <Navigate to="/login" replace />;
+  return user ? children : <Navigate to="/login" replace />; // Redirect to login if not logged in
 };
 
-// Header Component - Shows login/logout based on auth state
-const Header = () => {
-  const [user] = useAuthState(auth); // Get the authentication state
+// Sidebar Header (Login/Logout button)
+const SidebarHeader = () => {
+  const [user] = useAuthState(auth); // Get auth state to check if logged in
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -70,7 +67,6 @@ const Header = () => {
       >
         {user ? 'Logout' : 'Login'}
       </Button>
-      {/* Add other header components here */}
     </header>
   );
 };
@@ -81,12 +77,14 @@ export function Router() {
   return useRoutes([
     {
       element: (
+        <ProtectedRoute>
         <DashboardLayout>
-          {/* <Header/> */}
+          <SidebarHeader /> {/* Sidebar header for login/logout button */}
           <Suspense fallback={renderFallback}>
             <Outlet />
           </Suspense>
         </DashboardLayout>
+        </ProtectedRoute>
       ),
       children: [
         { element: <HomePage />, index: true },
@@ -96,7 +94,7 @@ export function Router() {
         {
           path: 'students-page',
           element: (
-            <ProtectedRoute>
+            <ProtectedRoute> {/* Only show if logged in */}
               <StudentsPage />
             </ProtectedRoute>
           ),

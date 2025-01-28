@@ -15,7 +15,7 @@ export const navData = [
   },
   {
     title: 'User',
-    path: '/user',
+    path: '/students-page',
     icon: icon('ic-user'),
   },
   {
@@ -43,11 +43,11 @@ export const navData = [
     path: '/log-out',
     icon: icon('ic-lock'),
   },
-  {
-    title: 'Students Page',
-    path: '/students-page',
-    icon: icon('ic-user'),
-  },
+  // {
+  //   title: 'Students Page',
+  //   path: '/students-page',
+  //   icon: icon('ic-user'),
+  // },
   {
     title: 'Login',
     path: '/login',
