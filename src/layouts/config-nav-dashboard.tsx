@@ -38,11 +38,11 @@ export const navData = [
     path: '/sign-in',
     icon: icon('ic-lock'),
   },
-  {
-    title: 'Log Out',
-    path: '/log-out',
-    icon: icon('ic-lock'),
-  },
+  // {
+  //   title: 'Log Out',
+  //   path: '/log-out',
+  //   icon: icon('ic-lock'),
+  // },
   // {
   //   title: 'Students Page',
   //   path: '/students-page',

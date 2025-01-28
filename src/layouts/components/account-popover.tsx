@@ -11,6 +11,9 @@ import MenuList from '@mui/material/MenuList';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuItem, { menuItemClasses } from '@mui/material/MenuItem';
+import { signOut } from "firebase/auth";
+import { auth } from "src/firebase/config";
+import { useNavigate } from "react-router-dom";
 
 import { useRouter, usePathname } from 'src/routes/hooks';
 
@@ -29,6 +32,7 @@ export type AccountPopoverProps = IconButtonProps & {
 
 export function AccountPopover({ data = [], sx, ...other }: AccountPopoverProps) {
   const router = useRouter();
+  const navigate = useNavigate();
 
   const pathname = usePathname();
 
@@ -41,6 +45,11 @@ export function AccountPopover({ data = [], sx, ...other }: AccountPopoverProps)
   const handleClosePopover = useCallback(() => {
     setOpenPopover(null);
   }, []);
+
+ const handleLogout = async () => {
+    await signOut(auth);
+    navigate("/login");
+  };
 
   const handleClickItem = useCallback(
     (path: string) => {
@@ -129,7 +138,8 @@ export function AccountPopover({ data = [], sx, ...other }: AccountPopoverProps)
         <Divider sx={{ borderStyle: 'dashed' }} />
 
         <Box sx={{ p: 1 }}>
-          <Button fullWidth color="error" size="medium" variant="text">
+          <Button fullWidth color="error" size="medium" variant="text" 
+          onClick={handleLogout}>
             Logout
           </Button>
         </Box>
